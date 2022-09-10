@@ -1,5 +1,5 @@
 # pibic-dags
-Repositório destinado para desenvolver o processo de ELT da pipeline do PIBIC, utilizando Apache Airflow
+Repositório destinado a desenvolver o processo de ELT da pipeline do PIBIC, utilizando Apache Airflow
 ## Passo à passo:
 ### Instalar Apache Airflow:
 ```
