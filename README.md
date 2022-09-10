@@ -30,5 +30,5 @@ airflow webserver --port 8080
 ```
 5. [localhost:8080](http://localhost:8080/)
 ### Inserindo a Dag:
-1. No arquivo $AIRFLOW_HOME/airflow.cfg, altere dags_folder para a pasta dags do repositório.
+1. No arquivo `$AIRFLOW_HOME/airflow.cfg`, altere `dags_folder` para a pasta `dags` do repositório.
 2. Agora, atualize a UI e você deve ver a DAG.
