@@ -15,24 +15,17 @@ def req() -> dict:
     return response;
 
 def process_response(response: dict) -> list:
-    #vamos deixar os dados do tipo:
-    #{
-    #    "latitude": Number,
-    #    "longitude": Number,
-    #    "tempo_captura": Timestamp,
-    #    "id_onibus": String,
-    #}
-
     lista_onibus = list()
-    for vs in response['l']:
-        instancia_processada = {
-            'latitude': vs['py'],
-            'longitude': vs['px'],
-            'tempo_captura': vs['ta'],
-            'id_onibus': vs['p']
-        }
-        #enfim vamos adicionar a nova instância processada na lista
-        lista_onibus.append(instancia_processada)
+    for linha in response['l']:
+        for vs in linha['vs']:
+            instancia_processada = {
+                'latitude': vs['py'],
+                'longitude': vs['px'],
+                'tempo_captura': vs['ta'],
+                'id_onibus': vs['p']
+            }
+            #enfim vamos adicionar a nova instância processada na lista
+            lista_onibus.append(instancia_processada)
     
     return lista_onibus
 
