@@ -25,12 +25,12 @@ def process_response(response: dict) -> list:
 
     lista_onibus = list()
     for vs in response['l']:
-        instancia_processada = dict()
-        instancia_processada['latitude'] = vs['py']
-        instancia_processada['longitude'] = vs['px']
-        instancia_processada['tempo_captura'] = vs['ta']
-        instancia_processada['id_onibus'] = vs['p']
-        
+        instancia_processada = {
+            'latitude': vs['py'],
+            'longitude': vs['px'],
+            'tempo_captura': vs['ta'],
+            'id_onibus': vs['p']
+        }
         #enfim vamos adicionar a nova instância processada na lista
         lista_onibus.append(instancia_processada)
     
