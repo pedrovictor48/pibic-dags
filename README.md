@@ -8,7 +8,7 @@ pip install apache-airflow
 ### Rodar Airflow:
 1. Para isso é preciso criar uma variável de ambiente chamda `AIRFLOW_HOME`, e setá-la para o diretório atual. Caso isso não seja feito, o airflow será instalado em `~/airflow/`.
 ```
-export AIRFLOW_HOME = "$(pwd)"
+export AIRFLOW_HOME="$(pwd)"
 ```
 2. Feito isso, vamos iniciar o banco de dados:
 ```
