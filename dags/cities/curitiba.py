@@ -4,7 +4,7 @@ from cities.utils import postar
 URL = 'https://transporteservico.urbs.curitiba.pr.gov.br/getVeiculos.php?&c=e5b1c'
 
 def req() -> dict:
-    response = requests.get(URLAPI + "/Posicao", cookies=auth.cookies)
+    response = requests.get(URLAPI)
     response = response.json()
 
     return response;
