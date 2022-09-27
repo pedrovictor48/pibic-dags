@@ -17,4 +17,4 @@ def process_response(response: dict) -> list:
 def df():
     response = req();
     response_list = process_response(response)
-    postar(process_response)
+    postar(response_list)
