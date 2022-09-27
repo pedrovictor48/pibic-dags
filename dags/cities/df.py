@@ -9,18 +9,12 @@ def req():
 
 def process_response(response: dict) -> list:
     lista_onibus = list()
-    for operadora in response:
-        for vs in operadora['veiculos']:
-            instancia_processada = {
-                'latitude': vs['localização']['longitude'],
-                'longitude': vs['localização']['latitude'],
-                'tempo_captura': vs['horario'],
-                'id_onibus': vs['numero']
-            }
-            lista_onibus.append(instancia_processada)
+    for item in response:
+        lista_onibus.append(item)
+                            
     return lista_onibus
 
 def df():
     response = req();
-    processed_response = process_response(response)
+    response_list = process_response(response)
     postar(process_response)
