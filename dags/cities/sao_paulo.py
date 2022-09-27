@@ -17,19 +17,11 @@ def req() -> dict:
 def process_response(response: dict) -> list:
     lista_onibus = list()
     for linha in response['l']:
-        for vs in linha['vs']:
-            instancia_processada = {
-                'latitude': vs['py'],
-                'longitude': vs['px'],
-                'tempo_captura': vs['ta'],
-                'id_onibus': vs['p']
-            }
-            #enfim vamos adicionar a nova instância processada na lista
-            lista_onibus.append(instancia_processada)
+        lista_onibus.append(linha)
     
     return lista_onibus
 
 def sao_paulo():
     response = req();
-    processed_response = process_response(response)
-    postar(process_response)
+    response_list = process_response(response)
+    postar(response_list)
