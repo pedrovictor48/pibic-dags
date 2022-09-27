@@ -27,5 +27,10 @@ with DAG("cities",
         task_id= "rio",
         python_callable=rio
     )
+    
+    curitiba_task = PythonOperator(
+        task_id= "curitiba",
+        python_callable=curitiba
+    )
 
-    sp_task >> df_task >> rio_task
+    sp_task >> df_task >> rio_task >> curitiba_task
