@@ -32,4 +32,4 @@ def process_response(response: dict) -> list:
 def sao_paulo():
     response = req();
     processed_response = process_response(response)
-    postar(process_response)
+    postar(processed_response)
