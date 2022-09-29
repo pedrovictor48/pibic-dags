@@ -15,7 +15,7 @@ def process_response(dados):
         veiculo['latitude'] = valores[4]
         veiculo['longitude'] = valores[5]
         veiculo['hora'] = valores[1]
-        veiculo['id'] = valores[0]
+        veiculo['id_onibus'] = valores[0]
 
         veiculos.append(veiculo)
     
