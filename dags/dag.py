@@ -7,6 +7,7 @@ from datetime import datetime, timedelta
 from dags.cities.sao_paulo import sao_paulo
 from dags.cities.df import df
 from dags.cities.rio import rio
+from dags.cities.buenos_aires import buenos_aires
 
 with DAG("cities",
     start_date=datetime(2022, 9, 16),
@@ -28,4 +29,9 @@ with DAG("cities",
         python_callable=rio
     )
 
-    sp_task >> df_task >> rio_task
+    buenos_aires_task = PythonOperator(
+        task_id= "buenos_aires",
+        python_callable=buenos_aires
+    )
+    
+    sp_task >> df_task >> rio_task >> buenos_aires
